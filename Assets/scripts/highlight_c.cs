@@ -32,7 +32,6 @@ public class highlight_c : MonoBehaviour
             GameObject game = hitInfo.collider.gameObject;
             if (currentTarget != game)
             {
-                
                 currentTarget = game;
                 currentTarget.layer = 3;
                 hit = true;

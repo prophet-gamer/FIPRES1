@@ -6,6 +6,9 @@ TagManager:
   tags:
   - interact
   - Open
+  - Fire
+  - lever
+  - fuse
   layers:
   - Default
   - TransparentFX

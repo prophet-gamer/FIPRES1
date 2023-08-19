@@ -11,7 +11,8 @@ public class Rotation : MonoBehaviour
     private Vector3 rot;
     RaycastHit hitInfo;
     private Rigidbody rb;
-    float r;
+    public Event_Open open;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,16 +22,16 @@ public class Rotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Physics.Raycast(camera.ScreenPointToRay(Center), out hitInfo, 10.0f))
+        if (Physics.Raycast(camera.ScreenPointToRay(Center), out hitInfo, 10.0f, LayerMask.GetMask("Highlight", "addedOBJ")))
         {
             GameObject game = hitInfo.collider.gameObject;
 
-            if (game.tag == "Open")
+            if (game.tag == "Open" && open.isopen == true)
             {
                 if (Input.GetKey(KeyCode.E))
                 {
                     selected = game.transform.parent.gameObject;
-                    selected.transform.localRotation = Quaternion.Slerp(selected.transform.localRotation, Quaternion.Euler(-90, 0, 180), Time.deltaTime);
+                    selected.transform.localRotation = Quaternion.Slerp(selected.transform.localRotation, Quaternion.Euler(-90, 0, 200), 2 * Time.deltaTime);
                 }
             }
         }
