@@ -65,6 +65,8 @@
     <Compile Include="Assets\scripts\Event_Open.cs" />
     <Compile Include="Assets\scripts\fuse_place.cs" />
     <Compile Include="Assets\scripts\Rotation.cs" />
+    <Compile Include="Assets\scripts\timeline.cs" />
+    <Compile Include="Assets\scripts\off_fire.cs" />
     <Compile Include="Assets\scripts\Attach.cs" />
     <Compile Include="Assets\scripts\lever.cs" />
   </ItemGroup>

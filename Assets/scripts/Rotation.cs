@@ -31,7 +31,11 @@ public class Rotation : MonoBehaviour
                 if (Input.GetKey(KeyCode.E))
                 {
                     selected = game.transform.parent.gameObject;
-                    selected.transform.localRotation = Quaternion.Slerp(selected.transform.localRotation, Quaternion.Euler(-90, 0, 200), 2 * Time.deltaTime);
+                    selected.transform.localRotation = Quaternion.Slerp(selected.transform.localRotation, Quaternion.Euler(-90, 0, 200), 3 * Time.deltaTime);
+                }
+                else if(Input.GetKey(KeyCode.Q))
+                {
+                    selected.transform.localRotation = Quaternion.Slerp(selected.transform.localRotation, Quaternion.Euler(-90, 0, 90), 3 * Time.deltaTime);
                 }
             }
         }

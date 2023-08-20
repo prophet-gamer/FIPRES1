@@ -5,7 +5,7 @@ using UnityEngine;
 public class fuse_place : MonoBehaviour
 {
     private Rigidbody rig;
-    
+    public bool fuse;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
@@ -17,7 +17,7 @@ public class fuse_place : MonoBehaviour
             other.transform.position = this.gameObject.transform.position;
             other.transform.rotation = this.gameObject.transform.rotation;
             other.transform.SetParent(this.gameObject.transform);
-            
+            fuse = true;
         }
     }
 }

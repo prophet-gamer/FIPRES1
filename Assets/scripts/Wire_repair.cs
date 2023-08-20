@@ -6,13 +6,11 @@ using UnityEngine.UIElements;
 
 public class Wire_repair : MonoBehaviour
 {
-    
+    public bool wire;
     public GameObject connect1;
     public GameObject connect2;
     private GameObject tool;
     private Rigidbody rb;
-    
-    public bool isopen;
     private void OnTriggerEnter(Collider other)
     {
         rb = other.GetComponent<Rigidbody>();
@@ -26,7 +24,8 @@ public class Wire_repair : MonoBehaviour
             rb.mass = 1;
             rb.useGravity = true;
             other.GetComponent<Animator>().enabled = true;
-            isopen = true;
+
+            wire = true;
             kill(tool, 3);
         }
 
