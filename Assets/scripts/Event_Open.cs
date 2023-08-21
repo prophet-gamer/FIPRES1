@@ -21,6 +21,8 @@ public class Event_Open : MonoBehaviour
             other.transform.SetParent(null);
             rb.mass = 1;
             rb.useGravity = true;
+            other.GetComponent<PlayableDirector>().enabled = true;
+            other.GetComponent<PlayableDirector>().playOnAwake = true;
             other.GetComponent<Animator>().enabled = true;
             isopen = true;
             kill(tool, 3);
@@ -29,6 +31,7 @@ public class Event_Open : MonoBehaviour
     }
     public void stop()
     {
+        tool.GetComponent<PlayableDirector>().enabled = false;
         tool.GetComponent<Animator>().enabled = false;
     }
     public void kill(GameObject other, float num)
